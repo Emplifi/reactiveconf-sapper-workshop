@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "name": "reactiveconf-sapper-workshop",
+  "builds": [{"src": "package.json", "use": "now-sapper"}],
+  "regions": ["arn", "bru", "cdg", "lhr"],
+  "public": true,
+  "build": {
+    "env": {
+      "TRACKING_ID": "@tracking-id"
+    }
+  }
+}
