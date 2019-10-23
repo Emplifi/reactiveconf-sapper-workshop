@@ -1,8 +1,7 @@
 import {URL} from 'url';
 import fetch from 'node-fetch';
 
-const BASE_URL =
-  process.env.CMS_URL || 'https://sapperweb.cdn.prismic.io/api/v2';
+const BASE_URL = 'https://sapperweb.cdn.prismic.io/api/v2';
 let masterRef = null;
 
 async function getRef() {
