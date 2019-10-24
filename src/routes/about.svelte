@@ -7,7 +7,7 @@
   let showMore = false;
 
   function handleShowMore() {
-    // TODO
+    showMore ? showMore = false : showMore = true
   }
 </script>
 
@@ -87,8 +87,6 @@
           red wines. Creative cuisine involves sophisticated wines.
         </p>
 
-        <CTA linkTheme="link-dark" linkTitle="Find more" on:click={handleShowMore}/>
-
         <p class="more" class:hidden={!showMore}>
           Vestibulum eleifend gravida neque a bibendum. Vivamus viverra velit
           non cursus elementum. Donec sit amet posuere ipsum. Mauris rutrum
@@ -96,6 +94,9 @@
           vestibulum dui. Ut vestibulum, lorem id eleifend mollis, urna augue
           imperdiet ante, vitae aliquam turpis mauris eget nisi.
         </p>
+
+        <CTA linkTheme="link-dark" linkTitle={showMore ? 'Find less' : 'Find more'} on:click={handleShowMore}/>
+
       </div>
       <div class="grid-item">
         <img src="/client/about-us.jpg" alt="" />

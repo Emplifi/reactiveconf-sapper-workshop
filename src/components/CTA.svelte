@@ -51,5 +51,5 @@
 {#if linkHref}
   <a href={linkHref} class="cta {linkTheme}">{linkTitle}</a>
 {:else}
-  <button type="button" class="cta {linkTheme}">{linkTitle}</button>
+  <button type="button" class="cta {linkTheme}" on:click>{linkTitle}</button>
 {/if}
