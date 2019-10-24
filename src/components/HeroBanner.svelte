@@ -93,8 +93,10 @@
   }
 </style>
 
-<div class="hero-banner">
-  <h1>Change this header!</h1>
-  <p>And this subtitle</p>
-  <CTA linkHref="#" linkTheme="link-light" linkTitle="Book a table" />
+<div class="hero-banner {bannerImg}" class:full-height={themeBannerFullHeight}>
+  <h1>{bannerTitle}</h1>
+  <p>{bannerSubtitle}</p>
+  {#if hasButton}
+    <CTA linkHref="#" linkTheme="link-light" linkTitle="Book a table" />
+  {/if}
 </div>
