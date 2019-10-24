@@ -4,5 +4,9 @@
   "builds": [{"src": "package.json", "use": "now-sapper"}],
   "regions": ["arn", "bru", "cdg", "lhr"],
   "public": true,
-  "build": {}
+  "build": {
+    "env": {
+      "TRACKING_ID": "@tracking-id"
+    }
+  }
 }
