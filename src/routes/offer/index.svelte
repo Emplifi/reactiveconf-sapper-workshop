@@ -10,9 +10,12 @@
 </script>
 
 <script>
+  import {fade} from 'svelte/transition';
   import PageTitle from '../../components/PageTitle.svelte';
   import HeroBanner from '../../components/HeroBanner.svelte';
   export let itemsPerCategory;
+
+  let selectedCategory;
 </script>
 
 <style>
@@ -225,7 +228,7 @@
   bannerImg="offer" />
 
 <section>
-  <div class="container">
+  <div class="container" transition:fade>
     <PageTitle title="Discover" subTitle="Our Menu" theme="title-dark" />
 
     <p>
@@ -235,29 +238,37 @@
     </p>
 
     <ul class="category">
-      <li class="category__item category__item--active">
-        <h4 class="category__title">Desserts</h4>
-        <div class="category__content">
-          <ul class="items">
-            <li class="item">
-              <img
-                src="https://sapperweb.cdn.prismic.io/sapperweb/bfc8a1d91fce6c4c7152c97069830fcb8f5f80b5_chocolate-cupcakes-2-400x400.jpg"
-                class="item-img"
-                alt="" />
-              <div>
-                <p class="item-name">
-                  <span class="item-name__title">
-                    Double Chocolate Cupcakes
-                  </span>
-                  <span class="item-name__dots" />
-                  <span class="item-name__price">$&nbsp;7</span>
-                </p>
-                <p class="item-ingredients">Chocolate, eggs, vanilla, milk</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </li>
+      {#each itemsPerCategory as [category, items]}
+        <li
+          class="category__item"
+          class:category__item--active={selectedCategory === category}>
+          <h4
+            class="category__title"
+            on:click={() => (selectedCategory === category ? (selectedCategory = null) : (selectedCategory = category))}
+            aria-expanded={selectedCategory === category}
+            role="button"
+            tabindex="0">
+            {category}
+          </h4>
+          <div class="category__content">
+            <ul class="items">
+              {#each items as item}
+                <li class="item">
+                  <img src={item.image.url} class="item-img" alt="" />
+                  <div>
+                    <p class="item-name">
+                      <span class="item-name__title">{item.name}</span>
+                      <span class="item-name__dots" />
+                      <span class="item-name__price">$&nbsp;{item.price}</span>
+                    </p>
+                    <p class="item-ingredients">{item.description}</p>
+                  </div>
+                </li>
+              {/each}
+            </ul>
+          </div>
+        </li>
+      {/each}
     </ul>
   </div>
 </section>
