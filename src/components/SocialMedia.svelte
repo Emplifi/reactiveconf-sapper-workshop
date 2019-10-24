@@ -25,6 +25,10 @@
     text-align: center;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   ul {
     padding: 24px 0;
     display: flex;
@@ -32,9 +36,12 @@
     justify-content: center;
   }
 
+  li {
+    padding: 0 24px;
+  }
+
   img {
     width: 24px;
-    margin: 0 24px;
   }
 </style>
 
@@ -42,10 +49,13 @@
   <h2>We are Social!</h2>
 
   <ul>
-    <li>
-      <a href="#" title="Face">
-        <img src="img/facebook-16.svg" alt="Facebook" />
-      </a>
-    </li>
+    {#each socialMedia as {name, href}}
+      <li>
+        <a {href} title={name}>
+          <img src="img/{name.toLowerCase()}-16.svg" alt={name} />
+        </a>
+      </li>
+    {/each}
+
   </ul>
 </section>
