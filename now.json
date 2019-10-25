@@ -1,8 +1,32 @@
 {
   "version": 2,
   "name": "reactiveconf-sapper-workshop",
-  "builds": [{"src": "package.json", "use": "now-sapper"}],
-  "regions": ["arn", "bru", "cdg", "lhr"],
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "now-sapper"
+    },
+    {
+      "src": "/lambda/*.js",
+      "use": "@now/node"
+    }
+  ],
+  "regions": [
+    "arn",
+    "bru",
+    "cdg",
+    "lhr"
+  ],
+  "routes": [
+    {
+      "src": "/lambda",
+      "methods": [
+        "POST",
+        "GET"
+      ],
+      "dest": "/lambda/data.js"
+    }
+  ],
   "public": true,
   "build": {
     "env": {
