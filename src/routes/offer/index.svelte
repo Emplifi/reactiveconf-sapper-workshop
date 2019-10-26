@@ -1,6 +1,7 @@
 <script context="module">
-  export function preload({params, query}) {
-    return this.fetch(`offer.json`)
+  import fetch from 'node-fetch';
+  export function preload({host, params, query}) {
+    return fetch(`https://reactiveconf-sapper-workshop.vorcigernix.now.sh/lambda`)
       .then(r => r.json())
       .then(itemsPerCategory => {
         // console.log(itemsPerCategory);
