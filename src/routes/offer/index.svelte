@@ -1,10 +1,9 @@
 <script context="module">
   import fetch from 'node-fetch';
   export function preload({host, params, query}) {
-    return fetch(`https://reactiveconf-sapper-workshop.vorcigernix.now.sh/lambda`)
+    return fetch(`https://` + host + `/lambda`)
       .then(r => r.json())
       .then(itemsPerCategory => {
-        // console.log(itemsPerCategory);
         return {itemsPerCategory: Object.entries(itemsPerCategory)};
       });
   }
@@ -221,7 +220,6 @@
 <svelte:head>
   <title>NerdCafé Offer &amp; Menu</title>
 </svelte:head>
-
 <HeroBanner
   bannerSubtitle="Check out our premium meal offers, whether you look for snack
   or lunch"
