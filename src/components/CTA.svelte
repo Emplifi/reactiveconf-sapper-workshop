@@ -1,6 +1,6 @@
 <script>
   export let linkTitle;
-  export let linkHref;
+  export let linkHref = ''; // Provide default value to prevent warning
   export let linkTheme = 'link-dark';
 </script>
 
