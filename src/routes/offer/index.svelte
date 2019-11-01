@@ -1,6 +1,12 @@
 <script context="module">
-  export function preload({params, query}) {
-    return this.fetch(`offer.json`)
+  export function preload({host, params, query}) {
+    let baseUrl = ''
+    // Workaround for https://github.com/thgh/now-sapper/issues/8
+    if (!process.browser && process.env.NOW_REGION) {
+      baseUrl = `https://${host}`
+    }
+    
+    return this.fetch(`${baseUrl}/offer.json`)
       .then(r => r.json())
       .then(itemsPerCategory => {
         // console.log(itemsPerCategory);
