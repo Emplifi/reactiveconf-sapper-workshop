@@ -8,6 +8,7 @@ Working repository for ReactiveConf 2019 workshop. Our goal is to build a websit
 
 - Node 10+
 - npm 6+
+- now
 
 ## Background
 
