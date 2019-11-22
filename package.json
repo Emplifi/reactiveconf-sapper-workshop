@@ -1,12 +1,16 @@
 {
-  "name": "reactiveconf-sapper-workshop",
-  "description": "Project for Sapper & Svelte workshop at ReactiveConf 2019",
-  "private": true,
-  "version": "0.0.2",
+  "name": "kontent-sample-app-svelte-sapper",
+  "description": "Project for Sapper & Svelte showcasing sourcing from Kentico Kontent",
+  "version": "1.0.0",
   "contributors": [
     "Adam Sobotka <adam.sobotka@socialbakers.com>",
     "Peter Popluhar <peter.popluhar@socialbakers.com>",
-    "Jan Vlnas <jan.vlnas@socialbakers.com>"
+    "Jan Vlnas <jan.vlnas@socialbakers.com>",
+    {
+      "name": "Ondřej Chrastina",
+      "email": "chrastina.ondra@gmail.com",
+      "url": "https://github.com/Simply007"
+    }
   ],
   "license": "MIT",
   "engines": {
@@ -38,6 +42,7 @@
     "@babel/runtime": "^7.0.0",
     "@now/node": "^1.0.1",
     "@polka/send": "^0.4.0",
+    "cypress": "^3.6.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
     "prettier-plugin-svelte": "^0.7.0",
