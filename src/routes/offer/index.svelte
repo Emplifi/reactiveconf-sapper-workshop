@@ -244,7 +244,7 @@
     </p>
 
     <ul class="category">
-      {#each itemsPerCategory as [category, items]}
+      {#each itemsPerCategory || [] as [category, items]}
         <li
           class="category__item"
           class:category__item--active={selectedCategory === category}>
@@ -260,14 +260,14 @@
             <ul class="items">
               {#each items as item}
                 <li class="item">
-                  <img src={item.image.url} class="item-img" alt="" />
+                  <img src={item.image.value[0].url} class="item-img" alt={item.image.value[0].description || item.image.value[0].name} />
                   <div>
                     <p class="item-name">
                       <span class="item-name__title">{item.name}</span>
                       <span class="item-name__dots" />
-                      <span class="item-name__price">$&nbsp;{item.price}</span>
+                      <span class="item-name__price">$&nbsp;{item.price.value}</span>
                     </p>
-                    <p class="item-ingredients">{item.description}</p>
+                    <p class="item-ingredients" >{@html item.description}</p>
                   </div>
                 </li>
               {/each}
