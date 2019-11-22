@@ -244,7 +244,7 @@
     </p>
 
     <ul class="category">
-      {#each itemsPerCategory || [] as [category, items]}
+      {#each itemsPerCategory as [category, items]}
         <li
           class="category__item"
           class:category__item--active={selectedCategory === category}>
