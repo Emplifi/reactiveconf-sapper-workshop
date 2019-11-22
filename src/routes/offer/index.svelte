@@ -1,11 +1,11 @@
 <script context="module">
   export function preload({host, params, query}) {
-    let baseUrl = ''
+    let baseUrl = '';
     // Workaround for https://github.com/thgh/now-sapper/issues/8
     if (!process.browser && process.env.NOW_REGION) {
-      baseUrl = `https://${host}`
+      baseUrl = `https://${host}`;
     }
-    
+
     return this.fetch(`${baseUrl}/offer.json`)
       .then(r => r.json())
       .then(itemsPerCategory => {
@@ -260,14 +260,21 @@
             <ul class="items">
               {#each items as item}
                 <li class="item">
-                  <img src={item.image.value[0].url} class="item-img" alt={item.image.value[0].description || item.image.value[0].name} />
+                  <img
+                    src={item.image.value[0].url}
+                    class="item-img"
+                    alt={item.image.value[0].description || item.image.value[0].name} />
                   <div>
                     <p class="item-name">
                       <span class="item-name__title">{item.name}</span>
                       <span class="item-name__dots" />
-                      <span class="item-name__price">$&nbsp;{item.price.value}</span>
+                      <span class="item-name__price">
+                        $&nbsp;{item.price.value}
+                      </span>
                     </p>
-                    <p class="item-ingredients" >{@html item.description}</p>
+                    <p class="item-ingredients">
+                      {@html item.description}
+                    </p>
                   </div>
                 </li>
               {/each}

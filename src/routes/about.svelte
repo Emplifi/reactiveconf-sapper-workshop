@@ -7,7 +7,7 @@
   let showMore = false;
 
   function handleShowMore() {
-    showMore ? showMore = false : showMore = true
+    showMore ? (showMore = false) : (showMore = true);
   }
 </script>
 
@@ -95,7 +95,10 @@
           imperdiet ante, vitae aliquam turpis mauris eget nisi.
         </p>
 
-        <CTA linkTheme="link-dark" linkTitle={showMore ? 'Find less' : 'Find more'} on:click={handleShowMore}/>
+        <CTA
+          linkTheme="link-dark"
+          linkTitle={showMore ? 'Find less' : 'Find more'}
+          on:click={handleShowMore} />
 
       </div>
       <div class="grid-item">

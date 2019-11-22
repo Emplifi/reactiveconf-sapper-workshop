@@ -15,13 +15,13 @@
   },
   "scripts": {
     "dev": "sapper dev",
-    "build": "ls && sapper build",
+    "build": "sapper build",
     "export": "sapper export --legacy",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "test": "run-p --race dev cy:run",
-    "prettier": "prettier --write --ignore-path .gitignore '**/*.{svelte,js,html,css}'"
+    "prettier": "prettier --write --ignore-path .gitignore **/*.{svelte,js,html,css}"
   },
   "dependencies": {
     "@kentico/kontent-delivery": "^8.0.0",
