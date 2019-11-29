@@ -10,7 +10,14 @@ Working repository for ReactiveConf 2019 workshop. Our goal is to build a websit
 - npm 6+
 - now
 
-## Background
+## Related Projects
+
+The following projects showcase other websites built upon Sapper and Svelte. Don't hesitate to add your own!
+
+- [kontent-sample-app-svelte-sapper](https://github.com/Simply007/kontent-sample-app-svelte-sapper) – Based on this repository, uses [Kentico Kontent](https://kontent.ai/) as a headless CMS solution.
+- [budecrikus](https://github.com/vorcigernix/budecirkus) – Website for Czech NGO with integration of events portal API.
+
+## Credits
 
 The project is based on [now-sapper-demo](https://github.com/beyonk-adventures/now-sapper-demo) by [@antony](https://github.com/antony). 
 
