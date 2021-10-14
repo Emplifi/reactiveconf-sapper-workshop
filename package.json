@@ -10,8 +10,8 @@
   ],
   "license": "MIT",
   "engines": {
-    "node": "10.x",
-    "npm": "^6"
+    "node": "16.x",
+    "npm": "^7"
   },
   "scripts": {
     "dev": "sapper dev",
